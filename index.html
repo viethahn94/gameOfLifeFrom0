@@ -8,19 +8,17 @@
     <style>
         #displayMatrix{
             display: flex;
-            width: 24px;
+            width: 120px;
             flex-wrap: wrap;
         }
     </style>
 </head>
 <body>
 <div id="displayMatrix">
-    <div style="width: 10px ; height: 10px ; background: black ; border: 1px solid gray ; float: left"></div>
-    <div style="width: 10px ; height: 10px ; background: white ; border: 1px solid gray ; float: left"></div>
-    <div style="width: 10px ; height: 10px ; background: white ; border: 1px solid gray ; float: left"></div>
-    <div style="width: 10px ; height: 10px ; background: black ; border: 1px solid gray ; float: left"></div>
+
 </div>
-
-
+<script>
+    document.getElementById("displayMatrix").innerHTML = setupLife(lifeData);
+</script>
 </body>
 </html>
