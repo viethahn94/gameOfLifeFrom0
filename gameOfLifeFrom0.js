@@ -87,5 +87,6 @@ $(document).ready(function () {
     let lifeData = setupLifeData();
     document.getElementById("displayMatrix").innerHTML = setupLife(lifeData);
 
-
+    lifeData = liveThrough(lifeData);
+    document.getElementById("displayMatrix").innerHTML = setupLife(lifeData);
 });
