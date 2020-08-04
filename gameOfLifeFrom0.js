@@ -3,22 +3,22 @@ const DEAD_CELL = `<div style="width: 10px ; height: 10px ; background: white ; 
 const LIVE = 1;
 const DEAD = 0;
 const OK_RATE = 2;
-const LIVE_RATE = 2;
+const LIVE_RATE = 3;
 const SIZE = 10;
 
 function setupLifeData() {
     let life = [];
 
-    life.push([0, 1, 1, 0, 1, 1, 0, 1, 0, 0]);
-    life.push([0, 1, 1, 0, 1, 1, 0, 1, 0, 0]);
-    life.push([0, 1, 1, 0, 1, 1, 0, 1, 0, 0]);
-    life.push([0, 1, 1, 0, 1, 1, 0, 1, 0, 0]);
-    life.push([0, 1, 1, 0, 1, 1, 0, 1, 0, 0]);
-    life.push([1, 0, 1, 1, 1, 1, 1, 1, 1, 1]);
-    life.push([1, 0, 1, 1, 1, 1, 1, 1, 1, 1]);
-    life.push([1, 0, 1, 1, 1, 1, 1, 1, 1, 1]);
-    life.push([1, 0, 1, 1, 1, 1, 1, 1, 1, 1]);
-    life.push([1, 0, 1, 1, 1, 1, 1, 1, 1, 1]);
+    life.push([0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
+    life.push([0, 0, 0, 0, 0, 1, 0, 0, 0, 0]);
+    life.push([0, 0, 0, 1, 0, 1, 0, 0, 0, 0]);
+    life.push([0, 0, 0, 0, 1, 1, 0, 0, 0, 0]);
+    life.push([0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
+    life.push([0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
+    life.push([0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
+    life.push([0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
+    life.push([0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
+    life.push([0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
 
     return life;
 }
@@ -87,6 +87,9 @@ $(document).ready(function () {
     let lifeData = setupLifeData();
     document.getElementById("displayMatrix").innerHTML = setupLife(lifeData);
 
-    lifeData = liveThrough(lifeData);
-    document.getElementById("displayMatrix").innerHTML = setupLife(lifeData);
+    setInterval(function () {
+        lifeData = liveThrough(lifeData);
+        document.getElementById("displayMatrix").innerHTML = setupLife(lifeData);
+    },500);
+
 });
